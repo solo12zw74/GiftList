@@ -24,3 +24,15 @@ There are a few files in utils:
 - The `example.js` script shows how we can generate a root, generate a proof and verify that some value is in the root using the proof. Try it out from the top-level folder with `node/example.js`
 - The `MerkleTree.js` should look familiar from the Merkle Tree module! This one has been modified so you should not have to deal with any crypto type conversion. You can import this in your client/server
 - The `verifyProof.js` should also look familiar. This was the last stage in the module. You can use this function to prove a name is in the merkle root, as show in the example.
+
+## Result
+
+As a result it was done:
+
+- the super-simple client, which uses few functions from the example folder
+- the super-simple server, which knows the MerkleTree root hash and can verify the proof and compare with the ethalon root hash
+- I was need to manually calculate the root hash to keep it once in the server side.
+
+As long as our initial source array for building MerkleTree, is static, thus I thought that recalculating merkle tree root not needed everytime when we send the request
+
+Actually, all the functions are sotred already in `utils`, I just was need to pick and apply them in a right order in a right places.
